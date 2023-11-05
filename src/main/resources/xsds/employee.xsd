@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.sarje.com/employees" xmlns:tns="http://www.sarje.com/employees" elementFormDefault="qualified">
+
+    <complexType name="employeeInfo">
+        <sequence>
+            <element name="empId" type="int" ></element>
+            <element name="empName" type="string" ></element>
+            <element name="salary" type="float" ></element>
+        </sequence>
+    </complexType>
+    <complexType name="serviceStatus">
+        <sequence>
+            <element name="serviceCode" type="string" ></element>
+            <element name="message" type="string" ></element>
+        </sequence>
+    </complexType>
+
+
+    <element name="getEmployeeByIdRequest">
+        <complexType>
+            <sequence>
+                <element name="empId" type="int" ></element>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="getEmployeeByIdResponse">
+        <complexType>
+            <sequence>
+                <element name="employeeInfo" type="tns:employeeInfo" ></element>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="addEmployeeRequest">
+        <complexType>
+            <sequence>
+                <element name="empName" type="string" ></element>
+                <element name="salary" type="float" ></element>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="addEmployeeResponse">
+        <complexType>
+            <sequence>
+                <element name="serviceStatus" type="tns:serviceStatus" ></element>
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>
